@@ -4,11 +4,11 @@ author: "Robert Windham"
 date: " `r Sys.Date()` "
 output: 
   html_document: 
-  toc: TRUE
-  toc_float: TRUE
-  toc_depth: 3
+  toc: true
+  toc_float: true
+  toc_depth: 3 
+  number_sections: true
   theme: united
-  self_contained: TRUE
   df_print: paged
 editor_options:
   markdown:
@@ -24,6 +24,9 @@ library(gtsummary)
 library(gt)
 library(flextable)
 library(dplyr)
+library(knitr)
+library(leaflet)
+library(hexbin)
 
 
 
@@ -145,7 +148,7 @@ avifauna3 <- avifauna2 %>%
 avifauna2Ttest <- ggplot(avifauna3, aes(x = sex, y = meanWingLength, fill = sex)) +
   geom_bar(stat = 'identity', position = 'dodge') +
   geom_errorbar(aes(ymin = meanWingLength - seWING, ymax = meanWingLength + seWING),
-                size = 1, colour = 'black',
+                size = .07, colour = 'black',
                 width = .2) +
   labs(y = "Mean Wing Length (mm)") +
   labs(x = "Sex") +
