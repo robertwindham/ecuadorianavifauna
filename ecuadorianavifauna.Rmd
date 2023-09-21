@@ -196,7 +196,7 @@ table_hummingbird <- avifauna %>%
   ) %>% #count obs. for categorical variables
   #add_p(snout_vent_length_mm ~ "aov") %>% CANT FIGURE OUT HOW TO FORCE ANOVA
   add_p(pvalue_fun = ~ style_pvalue(.x, digits = 2)) %>% #number of digits displayed for p-values
-  modify_caption("Table 2. Hummingbird and Habitat Characteristics") %>%
+  modify_caption("Table 2. Hummingbird Characteristics") %>%
   #modify_header(update = all_stat_cols() ~ "**{level}**") %>%  #headers to only contain species name
   #modify_footnote(all_stat_cols() ~ NA) %>% #squashes superscripts for the groups
   modify_header(
